@@ -41,4 +41,16 @@ class JwtServiceTest {
         var bad = new JwtProperties("c2hvcnQ=", "issuer", "audience", 15);
         assertThrows(IllegalStateException.class, () -> config.jwtSigningKey(bad));
     }
+    @Test
+    void missingSecretMustFail() {
+        var missing = new JwtProperties("", "issuer", "audience", 15);
+        assertThrows(IllegalStateException.class, () -> config.jwtSigningKey(missing));
+    }
+
+    @Test
+    void invalidJwtSettingsMustFail() {
+        var invalid = new JwtProperties(properties.secretBase64(), "issuer", "audience", 0);
+        assertThrows(IllegalStateException.class, () -> config.jwtSigningKey(invalid));
+    }
+
 }
