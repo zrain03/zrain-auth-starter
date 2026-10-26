@@ -53,19 +53,19 @@
     method.textContent = endpoints[mode].method;
     path.textContent = endpoints[mode].path;
     fields.hidden = mode === "me" || mode === "admin";
-    fieldNote.textContent = "Fictional values only · not sent to any server.";
+    fieldNote.textContent = "Use the preset sample password only · nothing is sent to a server.";
     setResponse("READY", { endpoint: endpoints[mode].path, instruction: "Run the browser-only simulation." }, "No network requests will be made.");
   }
 
   function run() {
     const email = emailInput.value.trim().toLowerCase();
     const password = passwordInput.value;
-    const invalid = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254 || password.length < 12 || password.length > 72;
+    const invalid = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254 || password !== "DemoPassword123!";
 
     switch (mode) {
       case "register":
         if (invalid) {
-          setResponse("400", { status: 400, code: "VALIDATION_ERROR", message: "Use a sample email and a demo password of 12–72 characters." }, "Simulated input validation.");
+          setResponse("400", { status: 400, code: "VALIDATION_ERROR", message: "Use a fictional email and the preset demo password: DemoPassword123!." }, "The browser demo uses one fixed sample password; it never stores credentials.");
           return;
         }
         if (demoUser && demoUser.email === email) {
