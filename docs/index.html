@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f4ee">
+  <meta name="theme-color" content="#fffaf6">
   <meta name="description" content="Zrain Auth Starter: a reusable Spring Boot JWT authentication foundation. Explore the architecture, try an isolated browser simulation, and start with a tested Java template.">
   <title>Zrain Auth Starter — Authentication, thoughtfully started.</title>
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./zrain-logo.webp" type="image/webp">
   <link rel="stylesheet" href="./site.css">
   <script src="./site.js" defer></script>
 </head>
@@ -15,8 +15,8 @@
   <header class="site-header">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Zrain Auth Starter home">
-        <span class="brand-mark" aria-hidden="true">Z</span>
-        <span class="brand-name">zrain<span class="brand-divider">/</span>auth starter</span>
+        <img class="brand-mark brand-logo-image" src="./zrain-logo.webp" alt="" width="42" height="42">
+        <span class="brand-name"><strong>Zrain</strong><span class="brand-divider">Auth Starter</span></span>
       </a>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#features">Features</a>
@@ -32,30 +32,30 @@
     <section class="hero container" id="top">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> OPEN-SOURCE JAVA FOUNDATION</p>
-        <h1>Authentication,<br><em>thoughtfully</em><br>started<span class="period">.</span></h1>
-        <p class="hero-intro">A starter project that shows how apps create accounts, sign people in, and protect private pages. No coding knowledge needed to explore the demo.</p>
+        <h1>Reusable JWT<br>authentication starter<br>for <em>Java developers.</em></h1>
+        <p class="hero-intro">A reusable Spring Boot JWT authentication foundation with register/login APIs, role-based access, and tests. Explore the guided demo or use the template in your project.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#playground">Try the beginner-friendly demo <span aria-hidden="true">↗</span></a>
+          <a class="button primary" href="#playground">Explore the demo <span aria-hidden="true">↗</span></a>
           <a class="button secondary" href="https://github.com/zrain03/zrain-auth-starter/generate" target="_blank" rel="noopener noreferrer">Use the template <span aria-hidden="true">↗</span></a>
         </div>
         <p class="hero-note"><span aria-hidden="true">✳</span> Built with Java 21 · Spring Boot 4.1.2 · Spring Security</p>
       </div>
-      <div class="hero-visual" aria-label="Architecture illustration showing secure authentication from a client to API authorization">
-        <div class="visual-topline"><span class="mini-brand">Z / AUTH</span><span class="visual-state"><i></i> SYSTEM DESIGN</span></div>
-        <div class="auth-path">
-          <div class="path-node client-node"><span class="node-icon">01</span><strong>Client</strong><small>Register / Login</small></div>
-          <div class="path-connector"><span></span><b>→</b></div>
-          <div class="path-node center-node"><span class="shield-symbol" aria-hidden="true">◇</span><strong>Spring Security</strong><small>Validate JWT + roles</small></div>
-          <div class="path-connector"><span></span><b>→</b></div>
-          <div class="path-node resource-node"><span class="node-icon">03</span><strong>Protected API</strong><small>Access granted</small></div>
-        </div>
-        <div class="visual-bottom"><span>AUTHENTICATED REQUEST</span><span class="visual-ok">● 200 OK</span></div>
-        <span class="visual-spark visual-spark-a">✳</span><span class="visual-spark visual-spark-b">✳</span>
+      <div class="hero-visual" aria-label="Preview of a Java Spring Boot authentication controller">
+        <div class="visual-topline"><span>AUTH API / CODE PREVIEW</span><span class="visual-state">JAVA 21 · SPRING BOOT</span></div>
+        <div class="code-tabs"><span class="code-tab-current">Register</span><span>Login</span><span>Protected API</span></div>
+        <pre class="hero-code"><code><span class="ln">1</span><span class="kw">@PostMapping</span>(<span class="str">"/api/v1/auth/register"</span>)
+<span class="ln">2</span><span class="kw">public</span> ResponseEntity&lt;?&gt; register(
+<span class="ln">3</span>   @Valid @RequestBody RegisterRequest request) {
+<span class="ln">4</span>   <span class="kw">var</span> user = authService.register(request);
+<span class="ln">5</span>   <span class="kw">return</span> ResponseEntity.status(<span class="num">201</span>)
+<span class="ln">6</span>        .body(user);
+<span class="ln">7</span>}</code></pre>
+        <div class="visual-bottom"><span>EXAMPLE CODE / NOT EXECUTABLE</span><span class="visual-ok">● READY TO EXPLORE</span></div>
       </div>
     </section>
 
     <section class="container proof-bar" aria-label="Verified project checks">
-      <div><strong>15 / 15</strong><span>automated tests passed</span></div>
+      <div><strong>20 / 20</strong><span>automated tests passed</span></div>
       <div><strong>Java 21</strong><span>modern Spring Boot foundation</span></div>
       <div><strong>CI ✓</strong><span>GitHub Actions verified</span></div>
       <div><strong>Open source</strong><span>reusable GitHub template</span></div>
@@ -78,7 +78,7 @@
         <article class="feature-card tan-card"><span class="feature-tag">02 / TOKENS</span><span class="feature-glyph" aria-hidden="true">◇</span><h3>Signed JWTs</h3><p>A JWT is a signed digital pass. It helps the server recognize an authenticated request without logging in again.</p><span class="feature-foot">15-minute default TTL</span></article>
         <article class="feature-card light-card"><span class="feature-tag">03 / ACCESS</span><span class="feature-glyph" aria-hidden="true">⊞</span><h3>Role-based access</h3><p>Some pages are open to everyone. Others require an account or an administrator role.</p><span class="feature-foot">USER / ADMIN</span></article>
         <article class="feature-card feature-wide warm-card"><div><span class="feature-tag">04 / DEVELOPER EXPERIENCE</span><h3>Built to learn from. <em>Ready to adapt.</em></h3><p>Tests, Swagger docs, a Maven Wrapper, and GitHub CI make this a practical starting point—not a black box.</p></div><pre class="mini-code" aria-label="Sample build command"><code><span>$</span> ./mvnw clean verify
-<span class="code-good">✓ 15 tests passed</span>
+<span class="code-good">✓ 20 tests passed</span>
 <span class="code-good">✓ BUILD SUCCESS</span></code></pre></article>
       </div>
     </section>
@@ -160,6 +160,6 @@ localhost:8080/swagger-ui.html</code></pre></div>
     </section>
     <section class="container final-strip"><div><p class="eyebrow">WHAT'S NEXT</p><h3>From starter to ecosystem.</h3><p>A hosted OAuth/OIDC identity platform is a separate future product, not a feature of this local HS256 template.</p></div><a href="https://github.com/zrain03/zrain-auth-starter/blob/main/docs/SECURITY.md" target="_blank" rel="noopener noreferrer">Read security notes <span aria-hidden="true">↗</span></a></section>
   </main>
-  <footer class="site-footer container"><a class="footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">Z</span> Zrain</a><p>One ecosystem. Many useful tools.</p><p>Developed by Zrain · <a href="mailto:zrain.dev@gmail.com">Contact</a> · <a href="https://github.com/zrain03/zrain-auth-starter">GitHub</a></p></footer>
+  <footer class="site-footer container"><a class="footer-brand" href="#top"><img class="brand-mark brand-logo-image" src="./zrain-logo.webp" alt="" width="28" height="28"> Zrain</a><p>One ecosystem. Many useful tools.</p><p>Developed by Zrain · <a href="mailto:zrain.dev@gmail.com">Contact</a> · <a href="https://github.com/zrain03/zrain-auth-starter">GitHub</a></p></footer>
 </body>
 </html>
