@@ -86,4 +86,29 @@ class SecurityIntegrationTest {
                 .header("Authorization", "Bearer " + admin))
                 .andExpect(status().isOk());
     }
+    @Test
+    void rejectWrongIssuerEvenWithValidSignature() throws Exception {
+        JwtClaimsSet claims = JwtClaimsSet.builder()
+                .issuer("unknown-issuer")
+                .subject(UUID.randomUUID().toString())
+                .audience(List.of(properties.audience()))
+                .issuedAt(Instant.now().minusSeconds(60))
+                .expiresAt(Instant.now().plusSeconds(600))
+                .claim("roles", List.of("ADMIN"))
+                .build();
+        String jwt = encoder.encode(JwtEncoderParameters.from(
+                JwsHeader.with(MacAlgorithm.HS256).build(), claims)).getTokenValue();
+
+        mvc.perform(get("/api/v1/demo/admin")
+                .header("Authorization", "Bearer " + jwt))
+                .andExpect(status().isUnauthorized());
+    }
+
+    @Test
+    void rejectMalformedBearerToken() throws Exception {
+        mvc.perform(get("/api/v1/demo/protected")
+                .header("Authorization", "Bearer not-a-valid-jwt"))
+                .andExpect(status().isUnauthorized());
+    }
+
 }
