@@ -17,3 +17,40 @@
 .demo-glossary{background:#fffefa;border:1px solid #e1e3d9;border-radius:16px;padding:22px;margin-top:20px}.demo-glossary h3{font-size:19px;margin:0 0 12px}.demo-glossary details{border-top:1px solid #e8e9df;padding:13px 0}.demo-glossary details:first-of-type{border-top:0}.demo-glossary summary{font-size:13px;font-weight:780;cursor:pointer}.demo-glossary details p{font-size:12px;line-height:1.8;color:#6b776a;margin:9px 0 0}
 @media(max-width:800px){.learning-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.welcome-section{padding:22px;margin-top:27px}.welcome-grid{grid-template-columns:1fr}.learning-steps{gap:7px}.learning-steps li{padding:10px 8px}.learning-steps small{font-size:9px}.sandbox-panel .tab-list{gap:0}.sandbox-panel .tab-button{font-size:11px;padding:10px}.step-guide h3{font-size:19px}.demo-glossary{padding:17px}}
+
+
+/* Zrain Unified • approved ivory / terracotta / charcoal bento theme */
+:root{--bg:#fffaf6;--ink:#17202e;--muted:#697482;--accent:#c34f31;--accent-dark:#a83d28;--border:#eaded5;--light:#fffefd;--olive:#f9e8de;--tan:#fff3e3;--warm:#f8e8dd;--radius:16px}
+body{font-family:Inter,"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#fffdfb 0%,#fff7f1 57%,#fffaf6 100%);color:var(--ink)}
+::selection{background:#f3d0c1;color:#57291f}
+.site-header{background:#fffaf8f0;border-color:#f0e3db}
+.brand{gap:9px}.brand-logo-image{width:43px;height:43px;object-fit:contain;background:transparent;border-radius:0;flex-shrink:0}.brand-name{font-size:17px;font-weight:500;color:#283346;letter-spacing:-.4px}.brand-name strong{color:#101927;font-weight:820}.brand-divider{margin:0 0 0 8px;color:#667286}
+.main-nav a{color:#303b4d}.main-nav a:hover{color:var(--accent)}.nav-github{border-radius:9px;border-color:#e7d9ce;background:#fffdfb}
+.eyebrow,.feature-tag{color:#b34c34}.eyebrow-dot{background:#c65a3b}
+.hero{grid-template-columns:.94fr 1.06fr;gap:34px;padding-top:62px;padding-bottom:44px}
+.hero h1{font-size:clamp(45px,4.55vw,70px);letter-spacing:-3.3px;line-height:1.08}.hero h1 em,.feature-wide h3 em{color:#bc5439;font-family:inherit;font-style:normal;font-weight:800}.hero-intro{max-width:570px;font-size:15px;color:#687487}
+.button{border-radius:9px}.primary{background:linear-gradient(130deg,#cb5b3c,#ba482d);box-shadow:0 4px 12px #c35c3520}.primary:hover{background:#a9402b}.secondary{background:#fffdfb;border-color:#e4d5cc}
+.hero-note span{color:#c55b37}
+.hero-visual{min-height:370px;background:#fffdfa;border-color:#ece0d9;border-radius:18px;padding:16px;box-shadow:0 14px 34px #3b26350a}
+.visual-topline{font-size:11px;letter-spacing:1px;color:#596477;padding:4px 6px 12px}
+.visual-state{color:#a4513b}
+.code-tabs{display:flex;gap:8px;padding-bottom:11px}
+.code-tabs span{border:1px solid #eadfd7;border-radius:7px;padding:7px 11px;color:#697485;font-size:11px}
+.code-tabs .code-tab-current{background:#cc5d3c;color:#fff;border-color:#cc5d3c}
+.hero-code{flex:1;background:#1c2633;color:#eaf1fa;border-radius:12px;padding:25px 15px;margin:0;overflow:auto;line-height:1.85;font-size:12px;font-family:"Cascadia Code",Consolas,monospace}
+.hero-code .ln{color:#77849a;display:inline-block;width:25px;user-select:none}.hero-code .kw{color:#e68c7a}.hero-code .str{color:#a5cc92}.hero-code .num{color:#e4bc78}
+.hero-visual .visual-bottom{padding:11px 6px 3px;font-size:9px;color:#8b6970}.hero-visual .visual-ok{background:#fae5d8;color:#ad4c33}
+.proof-bar,.welcome-section,.feature-card,.arch-step,.sandbox-panel,.response-panel,.quickstart-card{border-color:#ebdfd7;box-shadow:0 4px 18px #703f2506}
+.proof-bar{border-radius:15px}.proof-bar span,.section-heading>p,.feature-card p,.architecture-note p,.playground-disclaimer{color:#738092}
+.feature-grid{gap:14px;grid-auto-rows:minmax(205px,auto)}.feature-card{border-radius:15px;background:#fffdfa}.olive-card{background:#f9e9df}.tan-card{background:#fff1e5}.light-card{background:#f5f6f8}.warm-card{background:#fff0e4}
+.feature-tag,.feature-foot{color:#b45a3d}.feature-glyph{color:#cb745c40}.feature-card h3{color:#1b2937}
+.welcome-section{background:#fff3eb;border-color:#efddd0}.welcome-item{background:#fffdfb;border-color:#eadfd7}.welcome-number,.welcome-link{color:#bd5336}
+.architecture-note{background:#fff0e4;color:#835a4d}.demo-caution{background:#fff1e5;border-color:#f0ddce}.demo-caution p{color:#885e4e}.demo-caution .demo-indicator{background:#ca5739}
+.learning-steps .step-current{border-color:#ce8d75;background:#fff0e6}.learning-steps .step-current .learning-step-number,.learning-step-number{background:#c45437}.welcome-link,.tab-button.active{color:#b74d33}.tab-button.active{border-color:#b74d33}
+.sandbox-panel{background:#fffdfb}.endpoint-line span{background:#fae3d8;color:#a7492e}
+.response-panel{background:#1e2734}.response-header{color:#b2bac7}.response-footer{border-color:#3a4557}
+.status-pill.success,.session-dot.online{background:#376e57}.next-step-button{background:#f3dccd;color:#8f3d2c;border-color:#dfa890}
+.quickstart-card{background:#fff1e8}.terminal-card,.mini-code{background:#1f2935}.terminal-heading{border-color:#3b4651}
+.demo-fields input:focus-visible{outline-color:#cb6f53}.nav-github:hover{background:#fff0e5}
+.brand-mark:not(.brand-logo-image){background:#c45438}
+@media(max-width:700px){.hero{padding-top:48px}.hero-code{font-size:10px}.hero-visual{min-height:310px}.brand-logo-image{width:34px;height:34px}.brand-name{font-size:13px}}
