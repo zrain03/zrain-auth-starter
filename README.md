@@ -92,7 +92,7 @@ Before using this as an application backend, change the application/package iden
 
 Do **not** share the same HS256 signing secret across applications. Do **not** present this simple REST login implementation as a multi-tenant OAuth/OIDC identity provider.
 
-See [Architecture](docs/ARCHITECTURE.md) and [Security & limitations](docs/SECURITY.md).
+See [Architecture](docs/ARCHITECTURE.md), [Security & limitations](docs/SECURITY.md), and [Release status & Zrain Links integration checklist](docs/RELEASE_STATUS.md).
 
 ## License
 
