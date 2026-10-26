@@ -97,4 +97,29 @@ class AuthFlowIntegrationTest {
                 .andExpect(status().isUnauthorized())
                 .andExpect(jsonPath("$.code").value("INVALID_CREDENTIALS"));
     }
+    @Test
+    void deletedAccountCannotAccessMeWithOldToken() throws Exception {
+        mvc.perform(post("/api/v1/auth/register")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("""
+                        {"email":"removed@example.com","password":"VerySecurePassword123!"}
+                        """))
+                .andExpect(status().isCreated());
+
+        String loginBody = mvc.perform(post("/api/v1/auth/login")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("""
+                        {"email":"removed@example.com","password":"VerySecurePassword123!"}
+                        """))
+                .andExpect(status().isOk())
+                .andReturn().getResponse().getContentAsString();
+        String token = mapper.readTree(loginBody).get("accessToken").stringValue();
+
+        repository.deleteAll();
+
+        mvc.perform(get("/api/v1/users/me")
+                .header("Authorization", "Bearer " + token))
+                .andExpect(status().isUnauthorized());
+    }
+
 }
