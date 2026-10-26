@@ -65,7 +65,7 @@ Avoid publishing real access tokens, passwords, signing keys or screenshots cont
 
 ## Verification
 
-- **15 automated tests** passed locally and under GitHub Actions CI.
+- **20 automated tests** passed locally on 26 October 2026 (0 failures, 0 errors). The previously confirmed GitHub Actions run passed **15 tests**; CI results for the five additional tests have not yet been independently confirmed.
 - Manually verified register 201, login 200, current-user 200, forbidden admin 403, and five negative API scenarios.
 - Run `.\mvnw.cmd clean verify` (Windows) or `./mvnw clean verify` (macOS/Linux) to repeat the build.
 
