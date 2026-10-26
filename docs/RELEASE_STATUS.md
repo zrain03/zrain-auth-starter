@@ -9,8 +9,8 @@ The purpose is a **developer-owned, self-hosted authentication foundation**, not
 - Local manual REST checks passed: registration 201, login 200, profile 200 with JWT, USER forbidden on ADMIN endpoint 403, plus five public/error-path checks.
 - Java 21, Spring Boot 4.1.2, Maven Wrapper, template repository and a static documentation website are available.
 
-### Changes pending verification
-Three existing test files gained five regression scenarios: absent secret, invalid token lifetime, incorrect issuer, malformed bearer token, and deleted account attempting to use its old token for `/users/me`. **Run CI again and confirm the new total and green status before marking these as passed.** The last confirmed run with 15 tests predates these changes.
+### Expanded local test suite — verified 26 October 2026
+Three existing test files gained five regression scenarios: absent secret, invalid token lifetime, incorrect issuer, malformed bearer token, and deleted account attempting to use its old token for `/users/me`. The user ran `./mvnw.cmd clean verify` on Windows: **20 tests passed, 0 failures, 0 errors, BUILD SUCCESS**. The Git working tree was clean immediately afterward. **The earlier confirmed GitHub Actions run covered 15 tests. CI for the expanded 20-test suite has not yet been independently verified.**
 
 ### Known design limits
 - `application-local.yml` uses in-memory H2 with `create-drop`; accounts are erased on application restart. **Not deployable as a durable auth database.**
@@ -38,5 +38,8 @@ Three existing test files gained five regression scenarios: absent secret, inval
 ## Definition of done for a separately hosted Zrain Auth Cloud
 A future **distinct project**, not a checkbox on this starter: standards-based OAuth2/OpenID Connect, supported Authorization Code + PKCE flow, registered clients, reliable hosted database and service, key rotation, tenant/client boundaries, lifecycle management, abuse protection, recovery and third-party security verification. It has **not** been implemented.
 
-## Next validation
-Run `git pull --ff-only origin main` and `.\mvnw.cmd clean verify` locally; verify GitHub Actions results for the new test commits. If successful, this is a complete **starter v1.0 within its stated scope**, with the above production-integration limits remaining documented.
+## Remaining release checks
+- Inspect the GitHub Actions run for the five new tests and confirm CI passes on Linux.
+- Create a separate repository using **Use this template** and verify the copied project builds independently (not yet confirmed).
+- The reusable starter works within its documented development scope; these checks do not turn it into a hosted production identity service.
+- This project remains at Maven version `1.0.0-SNAPSHOT`; a final release tag/version has not yet been established.
