@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="Zrain Auth Starter: a reusable Spring Boot JWT authentication foundation. Explore the architecture, try an isolated browser simulation, and start with a tested Java template.">
+  <title>Zrain Auth Starter — Authentication, thoughtfully started.</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./site.css">
+  <script src="./site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Zrain Auth Starter home">
+        <span class="brand-mark" aria-hidden="true">Z</span>
+        <span class="brand-name">zrain<span class="brand-divider">/</span>auth starter</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#playground">Playground</a>
+        <a href="#quickstart">Quickstart</a>
+      </nav>
+      <a class="nav-github" href="https://github.com/zrain03/zrain-auth-starter" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> OPEN-SOURCE JAVA FOUNDATION</p>
+        <h1>Authentication,<br><em>thoughtfully</em><br>started<span class="period">.</span></h1>
+        <p class="hero-intro">A clean Spring Boot starting point for registration, JWT login, and role-based access. Understand it, test it, then make it yours.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#playground">Explore interactive demo <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="https://github.com/zrain03/zrain-auth-starter/generate" target="_blank" rel="noopener noreferrer">Use the template <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="hero-note"><span aria-hidden="true">✳</span> Built with Java 21 · Spring Boot 4.1.2 · Spring Security</p>
+      </div>
+      <div class="hero-visual" aria-label="Architecture illustration showing secure authentication from a client to API authorization">
+        <div class="visual-topline"><span class="mini-brand">Z / AUTH</span><span class="visual-state"><i></i> SYSTEM DESIGN</span></div>
+        <div class="auth-path">
+          <div class="path-node client-node"><span class="node-icon">01</span><strong>Client</strong><small>Register / Login</small></div>
+          <div class="path-connector"><span></span><b>→</b></div>
+          <div class="path-node center-node"><span class="shield-symbol" aria-hidden="true">◇</span><strong>Spring Security</strong><small>Validate JWT + roles</small></div>
+          <div class="path-connector"><span></span><b>→</b></div>
+          <div class="path-node resource-node"><span class="node-icon">03</span><strong>Protected API</strong><small>Access granted</small></div>
+        </div>
+        <div class="visual-bottom"><span>AUTHENTICATED REQUEST</span><span class="visual-ok">● 200 OK</span></div>
+        <span class="visual-spark visual-spark-a">✳</span><span class="visual-spark visual-spark-b">✳</span>
+      </div>
+    </section>
+
+    <section class="container proof-bar" aria-label="Verified project checks">
+      <div><strong>15 / 15</strong><span>automated tests passed</span></div>
+      <div><strong>Java 21</strong><span>modern Spring Boot foundation</span></div>
+      <div><strong>CI ✓</strong><span>GitHub Actions verified</span></div>
+      <div><strong>Open source</strong><span>reusable GitHub template</span></div>
+    </section>
+
+    <section class="container section" id="features">
+      <div class="section-heading"><div><p class="eyebrow">WHAT'S INSIDE</p><h2>Just the right foundations.</h2></div><p>Useful defaults, readable code, and room for your own product decisions.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card feature-large olive-card"><span class="feature-tag">01 / IDENTITY</span><span class="feature-glyph" aria-hidden="true">⌁</span><h3>Register & sign in</h3><p>Validated requests, normalized emails, encoded passwords, and clear response contracts.</p><span class="feature-foot">Spring MVC + Security</span></article>
+        <article class="feature-card tan-card"><span class="feature-tag">02 / TOKENS</span><span class="feature-glyph" aria-hidden="true">◇</span><h3>Signed JWTs</h3><p>HS256, issuer, audience, expiration, and access token validation.</p><span class="feature-foot">15-minute default TTL</span></article>
+        <article class="feature-card light-card"><span class="feature-tag">03 / ACCESS</span><span class="feature-glyph" aria-hidden="true">⊞</span><h3>Role-based access</h3><p>Public, authenticated, and admin-only endpoints demonstrate authorization boundaries.</p><span class="feature-foot">USER / ADMIN</span></article>
+        <article class="feature-card feature-wide warm-card"><div><span class="feature-tag">04 / DEVELOPER EXPERIENCE</span><h3>Built to learn from. <em>Ready to adapt.</em></h3><p>Tests, Swagger docs, a Maven Wrapper, and GitHub CI make this a practical starting point—not a black box.</p></div><pre class="mini-code" aria-label="Sample build command"><code><span>$</span> ./mvnw clean verify
+<span class="code-good">✓ 15 tests passed</span>
+<span class="code-good">✓ BUILD SUCCESS</span></code></pre></article>
+      </div>
+    </section>
+
+    <section class="container section architecture-section" id="architecture">
+      <div class="section-heading"><div><p class="eyebrow">UNDER THE HOOD</p><h2>A flow you can follow.</h2></div><p>Small pieces with a clear job. Each layer is visible in the repository.</p></div>
+      <div class="architecture-flow">
+        <div class="arch-step"><span class="arch-index">01</span><strong>Request</strong><span>Register or login</span></div>
+        <span class="arch-arrow" aria-hidden="true">→</span>
+        <div class="arch-step"><span class="arch-index">02</span><strong>Auth service</strong><span>Validate credentials</span></div>
+        <span class="arch-arrow" aria-hidden="true">→</span>
+        <div class="arch-step"><span class="arch-index">03</span><strong>JWT service</strong><span>Issue access token</span></div>
+        <span class="arch-arrow" aria-hidden="true">→</span>
+        <div class="arch-step"><span class="arch-index">04</span><strong>Security filter</strong><span>Verify token + role</span></div>
+      </div>
+      <div class="architecture-note"><span aria-hidden="true">ⓘ</span><p>The template uses an <strong>ephemeral H2 database</strong> for local development. Before a production application, add durable persistence, migrations, recovery, abuse protection, and service-specific safeguards.</p></div>
+    </section>
+
+    <section class="container section playground-section" id="playground">
+      <div class="section-heading"><div><p class="eyebrow">INTERACTIVE LEARNING</p><h2>Try the auth flow.</h2></div><p>Experiment with the request and response behavior before running the real Java API.</p></div>
+      <div class="demo-caution"><span class="demo-indicator" aria-hidden="true"></span><p><strong>Browser simulation — not a hosted auth server.</strong> No requests are sent anywhere. Use fictional data only. Nothing is persisted after refresh; the displayed token is illustrative and not cryptographically signed.</p></div>
+      <div class="playground-grid">
+        <div class="sandbox-panel">
+          <div class="panel-caption"><span class="panel-dots" aria-hidden="true">● ● ●</span><span>REQUEST BUILDER</span><span class="panel-version">v1 / demo</span></div>
+          <div class="tab-list" role="tablist" aria-label="Simulated API endpoints">
+            <button class="tab-button active" type="button" role="tab" id="tab-register" aria-selected="true" aria-controls="demo-fields" data-mode="register">Register</button>
+            <button class="tab-button" type="button" role="tab" id="tab-login" aria-selected="false" aria-controls="demo-fields" data-mode="login">Login</button>
+            <button class="tab-button" type="button" role="tab" id="tab-me" aria-selected="false" aria-controls="demo-fields" data-mode="me">/me</button>
+            <button class="tab-button" type="button" role="tab" id="tab-admin" aria-selected="false" aria-controls="demo-fields" data-mode="admin">Admin</button>
+          </div>
+          <div class="endpoint-line"><span id="request-method">POST</span><code id="request-path">/api/v1/auth/register</code></div>
+          <div id="demo-fields" class="demo-fields" role="tabpanel" aria-labelledby="tab-register">
+            <label for="demo-email">Demo email</label>
+            <input id="demo-email" type="email" value="demo@example.com" autocomplete="off" spellcheck="false" maxlength="254">
+            <label for="demo-password">Demo password</label>
+            <input id="demo-password" type="text" value="DemoPassword123!" autocomplete="off" spellcheck="false" maxlength="72">
+            <p id="demo-field-note" class="field-note">Sample values only. Never enter a real password.</p>
+          </div>
+          <div class="demo-controls"><button id="execute-demo" class="button primary" type="button">Run simulation <span aria-hidden="true">→</span></button><button id="reset-demo" class="reset-button" type="button">Reset demo</button></div>
+          <div class="sandbox-context"><span id="session-dot" class="session-dot"></span><span id="session-label">No demo session</span></div>
+        </div>
+        <div class="response-panel" aria-live="polite" aria-atomic="true">
+          <div class="response-header"><span>RESPONSE PREVIEW</span><span id="http-status" class="status-pill neutral">READY</span></div>
+          <pre class="response-code"><code id="response-body">{
+  "message": "Choose an endpoint and run the simulation.",
+  "mode": "browser-only"
+}</code></pre>
+          <div class="response-footer"><span id="response-hint">Your response will appear here.</span><button id="copy-response" type="button" aria-label="Copy the simulated JSON response">Copy JSON</button></div>
+        </div>
+      </div>
+      <p class="playground-disclaimer">Want the <strong>real Spring Boot implementation</strong>? Clone the template and run the local API through Swagger. This online playground intentionally never connects to a credential database.</p>
+    </section>
+
+    <section class="container section" id="quickstart">
+      <div class="quickstart-card">
+        <div class="quickstart-copy"><p class="eyebrow">MAKE IT YOURS</p><h2>Start with a tested baseline.</h2><p>Generate your own repo, create a fresh signing key, run the tests, and build on top of the Java API.</p><a class="button primary" href="https://github.com/zrain03/zrain-auth-starter/generate" target="_blank" rel="noopener noreferrer">Use this template <span aria-hidden="true">↗</span></a></div>
+        <div class="terminal-card"><div class="terminal-heading"><span aria-hidden="true">● ● ●</span><span>PowerShell / Windows</span></div><pre><code><span class="terminal-comment"># From your project folder</span>
+.\mvnw.cmd clean verify
+
+<span class="terminal-comment"># Set ZRAIN_JWT_SECRET_BASE64</span>
+<span class="terminal-comment"># to a fresh random 32-byte key</span>
+.\mvnw.cmd spring-boot:run
+
+<span class="terminal-comment"># Local interactive API docs</span>
+localhost:8080/swagger-ui.html</code></pre></div>
+      </div>
+    </section>
+    <section class="container final-strip"><div><p class="eyebrow">WHAT'S NEXT</p><h3>From starter to ecosystem.</h3><p>A hosted OAuth/OIDC identity platform is a separate future product, not a feature of this local HS256 template.</p></div><a href="https://github.com/zrain03/zrain-auth-starter/blob/main/docs/SECURITY.md" target="_blank" rel="noopener noreferrer">Read security notes <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="site-footer container"><a class="footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">Z</span> Zrain</a><p>One ecosystem. Many useful tools.</p><p>Developed by Zrain · <a href="mailto:zrain.dev@gmail.com">Contact</a> · <a href="https://github.com/zrain03/zrain-auth-starter">GitHub</a></p></footer>
+</body>
+</html>
