@@ -7,16 +7,20 @@
   <meta name="description" content="Zrain Auth Starter: a reusable Spring Boot JWT authentication foundation. Explore the architecture, try an isolated browser simulation, and start with a tested Java template.">
   <title>Zrain Auth Starter — Authentication, thoughtfully started.</title>
   <link rel="icon" href="./zrain-logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./site.css">
+  <link rel="stylesheet" href="./brand.css?v=zrain-shared-20261026-1">
   <script src="./site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Zrain Auth Starter home">
-        <img class="brand-mark brand-logo-image" src="./zrain-logo.webp" alt="" width="42" height="42">
-        <span class="brand-name"><strong>Zrain</strong><span class="brand-divider">Auth Starter</span></span>
+  <header class="site-header zrain-header">
+    <div class="container nav-inner zrain-header__inner">
+      <a class="brand zrain-brand" href="#top" aria-label="Zrain Auth Starter home">
+        <img class="brand-mark brand-logo-image zrain-brand__logo" src="./zrain-logo.webp" alt="" width="42" height="42">
+        <span class="brand-name zrain-brand__label"><strong>Zrain</strong><span class="brand-divider zrain-brand__product">Auth Starter</span></span>
       </a>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#features">Features</a>
@@ -160,6 +164,17 @@ localhost:8080/swagger-ui.html</code></pre></div>
     </section>
     <section class="container final-strip"><div><p class="eyebrow">WHAT'S NEXT</p><h3>From starter to ecosystem.</h3><p>A hosted OAuth/OIDC identity platform is a separate future product, not a feature of this local HS256 template.</p></div><a href="https://github.com/zrain03/zrain-auth-starter/blob/main/docs/SECURITY.md" target="_blank" rel="noopener noreferrer">Read security notes <span aria-hidden="true">↗</span></a></section>
   </main>
-  <footer class="site-footer container"><a class="footer-brand" href="#top"><img class="brand-mark brand-logo-image" src="./zrain-logo.webp" alt="" width="28" height="28"> Zrain</a><p>One ecosystem. Many useful tools.</p><p>Developed by Zrain · <a href="mailto:zrain.dev@gmail.com">Contact</a> · <a href="https://github.com/zrain03/zrain-auth-starter">GitHub</a></p></footer>
+  <footer class="site-footer zrain-footer">
+    <div class="container zrain-footer__inner">
+      <div class="footer-brand zrain-footer__identity">
+        <img src="./zrain-logo.webp" class="brand-mark brand-logo-image zrain-footer__logo" alt="" width="38" height="38">
+        <span class="zrain-footer__copy"><strong>Developed by Zrain</strong><small>One ecosystem. Many useful tools.</small></span>
+      </div>
+      <div class="zrain-footer__links">
+        <a href="mailto:zrain.dev@gmail.com">Contact</a>
+        <a href="https://github.com/zrain03/zrain-auth-starter" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
