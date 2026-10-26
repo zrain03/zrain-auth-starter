@@ -33,9 +33,9 @@
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> OPEN-SOURCE JAVA FOUNDATION</p>
         <h1>Authentication,<br><em>thoughtfully</em><br>started<span class="period">.</span></h1>
-        <p class="hero-intro">A clean Spring Boot starting point for registration, JWT login, and role-based access. Understand it, test it, then make it yours.</p>
+        <p class="hero-intro">A starter project that shows how apps create accounts, sign people in, and protect private pages. No coding knowledge needed to explore the demo.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#playground">Explore interactive demo <span aria-hidden="true">↗</span></a>
+          <a class="button primary" href="#playground">Try the beginner-friendly demo <span aria-hidden="true">↗</span></a>
           <a class="button secondary" href="https://github.com/zrain03/zrain-auth-starter/generate" target="_blank" rel="noopener noreferrer">Use the template <span aria-hidden="true">↗</span></a>
         </div>
         <p class="hero-note"><span aria-hidden="true">✳</span> Built with Java 21 · Spring Boot 4.1.2 · Spring Security</p>
@@ -61,12 +61,22 @@
       <div><strong>Open source</strong><span>reusable GitHub template</span></div>
     </section>
 
+    <section class="container welcome-section" aria-labelledby="welcome-title">
+      <div class="welcome-intro"><p class="eyebrow">NEW TO AUTHENTICATION?</p><h2 id="welcome-title">Think of it like a digital ID card.</h2><p>When you sign in to an app, it needs to recognize you and decide what you're allowed to see. That's what <strong>authentication</strong> (who you are) and <strong>authorization</strong> (what you can access) mean.</p></div>
+      <div class="welcome-grid">
+        <div class="welcome-item"><span class="welcome-number">01</span><strong>Create an account</strong><p>The app remembers who the user is.</p></div>
+        <div class="welcome-item"><span class="welcome-number">02</span><strong>Sign in to get a pass</strong><p>A real backend issues a signed token, like a temporary digital pass.</p></div>
+        <div class="welcome-item"><span class="welcome-number">03</span><strong>Show your pass</strong><p>Protected pages check the token and your permissions.</p></div>
+      </div>
+      <a class="welcome-link" href="#playground">No experience needed — try all four demo steps <span aria-hidden="true">↘</span></a>
+    </section>
+
     <section class="container section" id="features">
       <div class="section-heading"><div><p class="eyebrow">WHAT'S INSIDE</p><h2>Just the right foundations.</h2></div><p>Useful defaults, readable code, and room for your own product decisions.</p></div>
       <div class="feature-grid">
-        <article class="feature-card feature-large olive-card"><span class="feature-tag">01 / IDENTITY</span><span class="feature-glyph" aria-hidden="true">⌁</span><h3>Register & sign in</h3><p>Validated requests, normalized emails, encoded passwords, and clear response contracts.</p><span class="feature-foot">Spring MVC + Security</span></article>
-        <article class="feature-card tan-card"><span class="feature-tag">02 / TOKENS</span><span class="feature-glyph" aria-hidden="true">◇</span><h3>Signed JWTs</h3><p>HS256, issuer, audience, expiration, and access token validation.</p><span class="feature-foot">15-minute default TTL</span></article>
-        <article class="feature-card light-card"><span class="feature-tag">03 / ACCESS</span><span class="feature-glyph" aria-hidden="true">⊞</span><h3>Role-based access</h3><p>Public, authenticated, and admin-only endpoints demonstrate authorization boundaries.</p><span class="feature-foot">USER / ADMIN</span></article>
+        <article class="feature-card feature-large olive-card"><span class="feature-tag">01 / IDENTITY</span><span class="feature-glyph" aria-hidden="true">⌁</span><h3>Register & sign in</h3><p>Give users an account and check their login details. Passwords are hashed in the real Java backend.</p><span class="feature-foot">Spring MVC + Security</span></article>
+        <article class="feature-card tan-card"><span class="feature-tag">02 / TOKENS</span><span class="feature-glyph" aria-hidden="true">◇</span><h3>Signed JWTs</h3><p>A JWT is a signed digital pass. It helps the server recognize an authenticated request without logging in again.</p><span class="feature-foot">15-minute default TTL</span></article>
+        <article class="feature-card light-card"><span class="feature-tag">03 / ACCESS</span><span class="feature-glyph" aria-hidden="true">⊞</span><h3>Role-based access</h3><p>Some pages are open to everyone. Others require an account or an administrator role.</p><span class="feature-foot">USER / ADMIN</span></article>
         <article class="feature-card feature-wide warm-card"><div><span class="feature-tag">04 / DEVELOPER EXPERIENCE</span><h3>Built to learn from. <em>Ready to adapt.</em></h3><p>Tests, Swagger docs, a Maven Wrapper, and GitHub CI make this a practical starting point—not a black box.</p></div><pre class="mini-code" aria-label="Sample build command"><code><span>$</span> ./mvnw clean verify
 <span class="code-good">✓ 15 tests passed</span>
 <span class="code-good">✓ BUILD SUCCESS</span></code></pre></article>
@@ -88,38 +98,50 @@
     </section>
 
     <section class="container section playground-section" id="playground">
-      <div class="section-heading"><div><p class="eyebrow">INTERACTIVE LEARNING</p><h2>Try the auth flow.</h2></div><p>Experiment with the request and response behavior before running the real Java API.</p></div>
-      <div class="demo-caution"><span class="demo-indicator" aria-hidden="true"></span><p><strong>Browser simulation — not a hosted auth server.</strong> No requests are sent anywhere. Use fictional data only. Nothing is persisted after refresh; the displayed token is illustrative and not cryptographically signed.</p></div>
+      <div class="section-heading"><div><p class="eyebrow">NO CODING REQUIRED</p><h2>See how login works.</h2></div><p>Four small steps. We will tell you what to click and explain every result.</p></div>
+      <div class="demo-caution"><span class="demo-indicator" aria-hidden="true"></span><p><strong>Safe practice mode, not a real login.</strong> Use the example details already filled in. Nothing is sent to a server or saved. The token you see is only a pretend example, not a real JWT.</p></div>
+      <ol class="learning-steps" aria-label="Your four learning steps">
+        <li><span class="learning-step-number">1</span><span><strong>Create an account</strong><small>Make a pretend user</small></span></li>
+        <li><span class="learning-step-number">2</span><span><strong>Sign in</strong><small>Get a pretend token</small></span></li>
+        <li><span class="learning-step-number">3</span><span><strong>See your profile</strong><small>Open a private page</small></span></li>
+        <li><span class="learning-step-number">4</span><span><strong>Try admin access</strong><small>Understand permissions</small></span></li>
+      </ol>
       <div class="playground-grid">
         <div class="sandbox-panel">
-          <div class="panel-caption"><span class="panel-dots" aria-hidden="true">● ● ●</span><span>REQUEST BUILDER</span><span class="panel-version">v1 / demo</span></div>
+          <div class="panel-caption"><span class="panel-dots" aria-hidden="true">● ● ●</span><span>YOUR PRACTICE AREA</span><span class="panel-version">No coding needed</span></div>
+          <div class="step-guide"><span id="step-count">STEP 1 OF 4</span><h3 id="step-title">Create a practice account</h3><p id="step-description">Your example details are already filled in. Just click the button below to see how registration works.</p></div>
           <div class="tab-list" role="tablist" aria-label="Simulated API endpoints">
-            <button class="tab-button active" type="button" role="tab" id="tab-register" aria-selected="true" aria-controls="demo-fields" data-mode="register">Register</button>
-            <button class="tab-button" type="button" role="tab" id="tab-login" aria-selected="false" aria-controls="demo-fields" data-mode="login">Login</button>
-            <button class="tab-button" type="button" role="tab" id="tab-me" aria-selected="false" aria-controls="demo-fields" data-mode="me">/me</button>
-            <button class="tab-button" type="button" role="tab" id="tab-admin" aria-selected="false" aria-controls="demo-fields" data-mode="admin">Admin</button>
+            <button class="tab-button active" type="button" role="tab" id="tab-register" aria-selected="true" aria-controls="demo-fields" data-mode="register">1. Sign up</button>
+            <button class="tab-button" type="button" role="tab" id="tab-login" aria-selected="false" aria-controls="demo-fields" data-mode="login">2. Sign in</button>
+            <button class="tab-button" type="button" role="tab" id="tab-me" aria-selected="false" aria-controls="demo-fields" data-mode="me">3. Profile</button>
+            <button class="tab-button" type="button" role="tab" id="tab-admin" aria-selected="false" aria-controls="demo-fields" data-mode="admin">4. Admin</button>
           </div>
-          <div class="endpoint-line"><span id="request-method">POST</span><code id="request-path">/api/v1/auth/register</code></div>
+          <div class="endpoint-line" aria-label="Technical API request"><span id="request-method">POST</span><code id="request-path">/api/v1/auth/register</code></div><p class="endpoint-explainer" id="endpoint-explainer">Technical view: POST means “send a request”.</p>
           <div id="demo-fields" class="demo-fields" role="tabpanel" aria-labelledby="tab-register">
-            <label for="demo-email">Demo email</label>
+            <label for="demo-email">Example email (not your real one)</label>
             <input id="demo-email" type="email" value="demo@example.com" autocomplete="off" spellcheck="false" maxlength="254">
-            <label for="demo-password">Demo password</label>
-            <input id="demo-password" type="text" value="DemoPassword123!" autocomplete="off" spellcheck="false" maxlength="72">
-            <p id="demo-field-note" class="field-note">Sample values only. Never enter a real password.</p>
+            <label for="demo-password">Preset practice password</label>
+            <input id="demo-password" type="text" value="DemoPassword123!" autocomplete="off" spellcheck="false" maxlength="72" readonly aria-describedby="demo-field-note">
+            <p id="demo-field-note" class="field-note">This is a fixed example. Never type your real password here.</p>
           </div>
-          <div class="demo-controls"><button id="execute-demo" class="button primary" type="button">Run simulation <span aria-hidden="true">→</span></button><button id="reset-demo" class="reset-button" type="button">Reset demo</button></div>
+          <div class="demo-controls"><button id="execute-demo" class="button primary" type="button">Create demo account <span aria-hidden="true">→</span></button><button id="reset-demo" class="reset-button" type="button">Start over</button></div>
           <div class="sandbox-context"><span id="session-dot" class="session-dot"></span><span id="session-label">No demo session</span></div>
         </div>
         <div class="response-panel" aria-live="polite" aria-atomic="true">
-          <div class="response-header"><span>RESPONSE PREVIEW</span><span id="http-status" class="status-pill neutral">READY</span></div>
+          <div class="response-header"><span>WHAT HAPPENED?</span><span id="http-status" class="status-pill neutral">READY</span></div>
+          <div class="result-explanation" id="result-explanation"><div class="result-symbol" id="result-symbol" aria-hidden="true">?</div><div><h3 id="result-title">Ready when you are</h3><p id="result-description">Start with step 1. We will explain the response in everyday language.</p></div></div>
+          <div class="next-step-wrap" id="next-step-wrap" hidden><button type="button" class="next-step-button" id="next-step">Next: Sign in <span aria-hidden="true">→</span></button></div>
+          <details class="technical-details"><summary>See the technical response (JSON) <span class="tech-plus" aria-hidden="true">+</span></summary>
           <pre class="response-code"><code id="response-body">{
   "message": "Choose an endpoint and run the simulation.",
   "mode": "browser-only"
 }</code></pre>
+          </details>
           <div class="response-footer"><span id="response-hint">Your response will appear here.</span><button id="copy-response" type="button" aria-label="Copy the simulated JSON response">Copy JSON</button></div>
         </div>
       </div>
-      <p class="playground-disclaimer">Want the <strong>real Spring Boot implementation</strong>? Clone the template and run the local API through Swagger. This online playground intentionally never connects to a credential database.</p>
+      <div class="demo-glossary"><h3>A few terms, made simple</h3><details><summary>What is a JWT?</summary><p>JWT stands for JSON Web Token. In the real Java app, it is a signed token that a server checks when you ask to open a protected page. This browser demo only displays a pretend placeholder.</p></details><details><summary>What do numbers like 200, 201, 401 and 403 mean?</summary><p>They are HTTP status codes: <strong>200</strong> = worked, <strong>201</strong> = account created, <strong>401</strong> = sign-in needed or credentials invalid, <strong>403</strong> = signed in but not allowed, <strong>409</strong> = account already exists.</p></details><details><summary>Is this a real account I can use?</summary><p>No. It is just a private practice session in your browser tab. It does not contact the Java server, create a real account, save your information, or generate a usable token.</p></details></div>
+      <p class="playground-disclaimer">Want to run the <strong>real Java API</strong>? Use the GitHub template and open Swagger locally. The online exercise stays separate from real user data.</p>
     </section>
 
     <section class="container section" id="quickstart">
