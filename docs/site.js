@@ -15,6 +15,30 @@
   const execute = document.getElementById("execute-demo");
   const reset = document.getElementById("reset-demo");
   const copy = document.getElementById("copy-response");
+  const stepCount = document.getElementById("step-count");
+  const stepTitle = document.getElementById("step-title");
+  const stepDescription = document.getElementById("step-description");
+  const endpointExplainer = document.getElementById("endpoint-explainer");
+  const resultTitle = document.getElementById("result-title");
+  const resultDescription = document.getElementById("result-description");
+  const resultSymbol = document.getElementById("result-symbol");
+  const nextWrap = document.getElementById("next-step-wrap");
+  const nextButton = document.getElementById("next-step");
+  const steps = ["register", "login", "me", "admin"];
+  const guidance = {
+    register: ["Create a practice account", "The email and password are already examples. Press the button below to create a pretend account.", "Create demo account", "POST means send account details to the server."],
+    login: ["Sign in to the practice account", "Use the same sample details. The demo will show a pretend JWT — a digital pass used by real backends.", "Sign in with demo account", "POST means send sign-in details to the server."],
+    me: ["Open your private profile", "This page needs you to be signed in. A real server checks your JWT first.", "View demo profile", "GET means ask the server for information."],
+    admin: ["Try opening an admin-only page", "You are signed in as a regular USER, not an ADMIN. See why permission checks matter.", "Try admin page", "GET means ask the server for information."]
+  };
+  const results = {
+    "200": ["It worked!", "Your request was allowed. For login, the pretend token represents a short-lived digital pass.", "✓"],
+    "201": ["Practice account created!", "You have a pretend USER account. Continue to sign in with the same example details.", "✓"],
+    "400": ["Let's check the example details", "Use an example email like demo@example.com. The practice password is already filled in.", "!"],
+    "401": ["You need to sign in first", "This action requires an account session, or the login details did not match.", "i"],
+    "403": ["You're signed in, but not an admin", "This is the expected result: a regular USER cannot open an ADMIN-only page.", "✓"],
+    "409": ["That practice account already exists", "You can sign in with it now. The demo prevents registering the same email twice.", "i"]
+  };
 
   const endpoints = {
     register: { method: "POST", path: "/api/v1/auth/register" },
@@ -34,6 +58,14 @@
     status.textContent = code;
     status.className = "status-pill " + (code.startsWith("2") ? "success" : code === "READY" ? "neutral" : "client-error");
     hint.textContent = message;
+    const explanation = results[code];
+    resultTitle.textContent = explanation ? explanation[0] : "Ready when you are";
+    resultDescription.textContent = explanation ? explanation[1] : "Follow the highlighted step and click the button to see what happens.";
+    resultSymbol.textContent = explanation ? explanation[2] : "?";
+    resultSymbol.classList.toggle("result-positive", code.startsWith("2") || code === "403");
+    const advance = (mode === "register" && code === "201") || (mode === "login" && code === "200") || (mode === "me" && code === "200");
+    nextWrap.hidden = !advance;
+    if (advance) nextButton.textContent = "Next: " + ({register:"Sign in",login:"View profile",me:"Try admin access"})[mode] + " →";
   }
 
   function updateSession() {
@@ -53,7 +85,17 @@
     method.textContent = endpoints[mode].method;
     path.textContent = endpoints[mode].path;
     fields.hidden = mode === "me" || mode === "admin";
-    fieldNote.textContent = "Use the preset sample password only · nothing is sent to a server.";
+    const [title, description, action, endpoint] = guidance[mode];
+    stepCount.textContent = "STEP " + (steps.indexOf(mode) + 1) + " OF 4";
+    stepTitle.textContent = title;
+    stepDescription.textContent = description;
+    execute.firstChild.textContent = action + " ";
+    endpointExplainer.textContent = "Technical view: " + endpoint;
+    document.querySelectorAll(".learning-steps li").forEach((li, i) => {
+      li.classList.toggle("step-current", i === steps.indexOf(mode));
+      li.classList.toggle("step-complete", i < steps.indexOf(mode));
+    });
+    fieldNote.textContent = "Preset practice password only. Never enter a real password.";
     setResponse("READY", { endpoint: endpoints[mode].path, instruction: "Run the browser-only simulation." }, "No network requests will be made.");
   }
 
@@ -114,6 +156,7 @@
     });
   });
   execute.addEventListener("click", run);
+  nextButton.addEventListener("click", () => setMode(steps[steps.indexOf(mode) + 1]));
   reset.addEventListener("click", () => {
     demoUser = null;
     authenticated = false;
