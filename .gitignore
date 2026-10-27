@@ -13,3 +13,6 @@ target/
 *.mv.db
 *.trace.db
 .DS_Store
+
+# Optional Zrain UI website tooling
+node_modules/
