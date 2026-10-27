@@ -1,0 +1,22 @@
+name: Zrain UI dependency checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-website-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned GitHub dependency
+        run: npm install --no-audit --no-fund
+      - name: Verify shared UI assets and static website
+        run: npm run test:ui
