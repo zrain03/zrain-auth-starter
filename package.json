@@ -1,0 +1,17 @@
+{
+  "name": "zrain-auth-starter-website",
+  "private": true,
+  "type": "module",
+  "description": "Optional website asset build tooling. Java Spring Boot uses Maven independently.",
+  "scripts": {
+    "ui:sync": "node scripts/sync-zrain-ui.mjs",
+    "ui:check": "node scripts/sync-zrain-ui.mjs --check",
+    "test:ui": "npm run ui:check && node docs/check-zrain-ui.mjs"
+  },
+  "dependencies": {
+    "@zrain/ui": "github:zrain03/zrain-ui#af77e6782bdfa168296c1fe14061d72a1e400c55"
+  },
+  "zrainUi": {
+    "publicDir": "docs"
+  }
+}
