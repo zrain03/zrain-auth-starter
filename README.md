@@ -6,6 +6,21 @@ A reusable **Java 21 / Spring Boot 4.1.2** authentication foundation with Spring
 
 > **Important:** This repository is a self-hosted **starter template**, not a shared hosted identity provider. The website playground is a JavaScript simulation: **no real accounts, credentials, server sessions, or signed JWTs** are created. Hosted authentication for third-party apps would require a separate OAuth 2.0 / OpenID Connect authorization server with appropriate security and operations.
 
+## Zrain UI Git dependency for the public website
+
+The static website in `docs/` now uses the pinned GitHub package `@zrain/ui` from [zrain03/zrain-ui](https://github.com/zrain03/zrain-ui). It provides the official `brand.css`, `zrain-ui.js` and logo. These files are copied automatically during the website UI sync step; they should not be separately modified in this repository.
+
+```powershell
+npm install
+npm run ui:sync
+npm run test:ui
+```
+
+Commit and push `docs/brand.css`, `docs/zrain-ui.js`, `docs/zrain-logo.webp` and `package-lock.json` when they change, then GitHub Pages can publish them **if Pages is configured for the branch and `docs/` directory**. The package is pinned to commit `af77e6782bdfa168296c1fe14061d72a1e400c55`; upgrade explicitly after review. CI checks that copied website assets match the pinned package.
+
+Node.js is required **only for this optional static website asset workflow**. The Java Spring Boot starter, JWT logic, Maven build and database remain completely independent.
+
+
 ## Requirements
 
 - JDK **21**
