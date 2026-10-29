@@ -8,6 +8,7 @@ const css=await read("./brand.css");
 assert.match(html,/class="zrain-brand__home" href="https:\/\/zrain\.web\.app"/);
 assert.match(html,/class="zrain-footer__home" href="https:\/\/zrain\.web\.app"/);
 assert.match(html,/Made for people\. Built with purpose\./);
+assert.doesNotMatch(html,/class="zrain-brand__tagline"/);
 assert.match(html,/zrain-ui-config\.js/);
 assert.match(html,/id="playground"/);
 assert.match(html,/href="#quickstart"/);
