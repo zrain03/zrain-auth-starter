@@ -20,7 +20,7 @@ npm run ui:sync
 npm run test:ui
 ```
 
-Commit and push `docs/brand.css`, `docs/zrain-ui.js`, `docs/zrain-logo.webp` and `package-lock.json` when they change, then GitHub Pages can publish them **if Pages is configured for the branch and `docs/` directory**. The package is pinned to commit `af77e6782bdfa168296c1fe14061d72a1e400c55`; upgrade explicitly after review. CI checks that copied website assets match the pinned package.
+Commit and push `docs/brand.css`, `docs/zrain-ui.js`, `docs/zrain-logo.webp` and `package-lock.json` when they change, then GitHub Pages can publish them **if Pages is configured for the branch and `docs/` directory**. The package is pinned to commit `ecab5bcea4ed90e357790ff1cada4a66f446d9aa`; upgrade explicitly after review. CI checks that copied website assets match the pinned package.
 
 Node.js is required **only for this optional static website asset workflow**. The Java Spring Boot starter, JWT logic, Maven build and database remain completely independent.
 
