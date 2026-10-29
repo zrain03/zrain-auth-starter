@@ -7,7 +7,7 @@ const ui=await read("./zrain-ui.js");
 const css=await read("./brand.css");
 assert.match(html,/class="zrain-brand__home" href="https:\/\/zrain\.web\.app"/);
 assert.match(html,/class="zrain-footer__home" href="https:\/\/zrain\.web\.app"/);
-assert.match(html,/One ecosystem\. A variety of useful tools\./);
+assert.match(html,/Made for people\. Built with purpose\./);
 assert.match(html,/zrain-ui-config\.js/);
 assert.match(html,/id="playground"/);
 assert.match(html,/href="#quickstart"/);

@@ -1,5 +1,9 @@
 # Zrain Auth Starter
 
+**Zrain tagline:** Made for people. Built with purpose.
+
+**Zrain Ecosystem:** https://zrain.web.app
+
 A reusable **Java 21 / Spring Boot 4.1.2** authentication foundation with Spring Security, registration, password hashing, JWT, role-based authorization, H2, Swagger, Maven Wrapper and automated tests.
 
 **[Explore the public website and browser-only playground](https://zrain03.github.io/zrain-auth-starter/)** (website requires GitHub Pages to be enabled once).
