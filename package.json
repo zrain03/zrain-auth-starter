@@ -9,7 +9,7 @@
     "test:ui": "npm run ui:check && node docs/check-zrain-ui.mjs"
   },
   "dependencies": {
-    "@zrain/ui": "github:zrain03/zrain-ui#37a699a9e23fb9f023c049d3129206aafc660830"
+    "@zrain/ui": "github:zrain03/zrain-ui#ecab5bcea4ed90e357790ff1cada4a66f446d9aa"
   },
   "zrainUi": {
     "publicDir": "docs"
