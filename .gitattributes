@@ -5,3 +5,5 @@ mvnw text eol=lf
 *.cmd text eol=crlf
 *.yml text eol=lf
 *.yaml text eol=lf
+docs/zrain-ui.js text eol=lf
+docs/brand.css text eol=lf
