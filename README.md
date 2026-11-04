@@ -1,3 +1,11 @@
+<!--
+Pembangun / Developer: Zrain
+Dicipta / Created: Unknown (rekod asal belum disahkan)
+Dikemas kini / Last updated: 2026-11-04
+Fail / File: README.md
+BM: Penerangan penggunaan dan integrasi versi terkini shared UI Zrain.
+EN: Usage documentation for the latest Zrain shared UI integration.
+-->
 # Zrain Auth Starter
 
 **Zrain tagline:** Made for people. Built with purpose.
@@ -20,10 +28,14 @@ npm run ui:sync
 npm run test:ui
 ```
 
-Commit and push `docs/brand.css`, `docs/zrain-ui.js`, `docs/zrain-logo.webp` and `package-lock.json` when they change, then GitHub Pages can publish them **if Pages is configured for the branch and `docs/` directory**. The package is pinned to commit `fec7b1fe5deab157bdadf0af19d9384b1dc418f0`; upgrade explicitly after review. CI checks that copied website assets match the pinned package.
+Commit and push `docs/brand.css`, `docs/zrain-ui.js`, `docs/zrain-logo.webp` and `package-lock.json` when they change, then GitHub Pages can publish them **if Pages is configured for the branch and `docs/` directory**. The package is pinned to commit `a109401fa591afa9f66479fa8d86f1ed1679d70b`; upgrade explicitly after review. CI checks that copied website assets match the pinned package.
 
 Node.js is required **only for this optional static website asset workflow**. The Java Spring Boot starter, JWT logic, Maven build and database remain completely independent.
 
+
+**BM:** Navigation website menggunakan Golden Reference Discover dan ScrollSpy pilihan (klik/scroll) untuk Features, Architecture, Playground dan Quickstart. Backend Java dan simulasi playground tidak diubah.
+
+**EN:** Website navigation uses the Discover Golden Reference and optional click/scroll ScrollSpy for Features, Architecture, Playground and Quickstart. The Java backend and playground simulation remain unchanged.
 
 ## Requirements
 
