@@ -32,6 +32,8 @@ class AuthFlowIntegrationTest {
     @Autowired JsonMapper mapper;
 
     @BeforeEach
+    // BM: Kosongkan data ujian sebelum kes seterusnya supaya hasil bebas daripada susunan ujian.
+    // EN: Clear test data before each case so results are independent of test order.
     void clean() {
         repository.deleteAll();
     }

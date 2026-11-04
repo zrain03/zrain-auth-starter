@@ -37,6 +37,8 @@ class AuthServiceTest {
     @InjectMocks AuthService service;
 
     @Test
+    // BM: Sahkan emel dinormalisasi dan kata laluan tidak pernah disimpan sebagai teks biasa.
+    // EN: Verify email normalization and ensure passwords are never stored as plain text.
     void registerNormalizesEmailAndHashesPassword() {
         when(encoder.encode("A-Long-Passphrase!123")).thenReturn("{bcrypt}hash");
         when(repository.saveAndFlush(any(AppUser.class)))
@@ -54,6 +56,8 @@ class AuthServiceTest {
     }
 
     @Test
+    // BM: Sahkan emel sedia ada tidak boleh didaftarkan dua kali.
+    // EN: Verify an existing email cannot be registered twice.
     void rejectDuplicateEmail() {
         when(repository.existsByEmail("test@example.com")).thenReturn(true);
 
@@ -65,6 +69,8 @@ class AuthServiceTest {
     }
 
     @Test
+    // BM: Sahkan had bait UTF-8 mencegah pemotongan input secara senyap dalam hasher.
+    // EN: Verify the UTF-8 byte limit prevents silent input truncation by the hasher.
     void rejectPasswordOver72Utf8Bytes() {
         assertThrows(IllegalArgumentException.class,
                 () -> service.registerUser(
@@ -72,6 +78,8 @@ class AuthServiceTest {
     }
 
     @Test
+    // BM: Sahkan credential sah menyebabkan token akses dikeluarkan.
+    // EN: Verify valid credentials produce an access token.
     void loginCorrectPasswordCreatesToken() {
         AppUser user = new AppUser("test@example.com", "hash", Role.USER);
 
@@ -89,6 +97,8 @@ class AuthServiceTest {
     }
 
     @Test
+    // BM: Pastikan kata laluan yang salah ditolak dengan mesej generik.
+    // EN: Ensure wrong passwords are rejected with a generic message.
     void loginWrongPasswordIsRejected() {
         AppUser user = new AppUser("test@example.com", "hash", Role.USER);
 
@@ -101,6 +111,8 @@ class AuthServiceTest {
     }
 
     @Test
+    // BM: Pastikan pengguna yang tidak wujud tidak didedahkan melalui mesej ralat.
+    // EN: Ensure unknown users are not disclosed through error messages.
     void unknownUserIsRejected() {
         assertThrows(BadCredentialsException.class,
                 () -> service.authenticate(

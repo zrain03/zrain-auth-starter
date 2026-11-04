@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
     private final AuthService service;
 
+    // BM: Suntik AuthService untuk memisahkan pengendalian HTTP daripada pendaftaran dan pengesahan sebenar.
+    // EN: Inject AuthService to separate HTTP handling from registration and verification logic.
     public AuthController(AuthService service) { this.service = service; }
 
     @PostMapping("/register")

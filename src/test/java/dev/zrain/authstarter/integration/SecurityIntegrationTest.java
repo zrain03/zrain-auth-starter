@@ -36,6 +36,8 @@ class SecurityIntegrationTest {
     @Autowired JwtEncoder encoder;
     @Autowired JwtProperties properties;
 
+    // BM: Cipta token ujian bertuntutan boleh ubah untuk menguji validasi tanpa memintas security filter sebenar.
+    // EN: Create test tokens with varied claims to exercise validation without bypassing the real security filters.
     private String token(String audience, Instant expiry, String role) {
         JwtClaimsSet claims = JwtClaimsSet.builder()
                 .issuer(properties.issuer())
