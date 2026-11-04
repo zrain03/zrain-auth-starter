@@ -1,3 +1,12 @@
+<!--
+Pembangun / Developer: Zrain
+Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
+Dikemas kini / Last updated: 2026-11-04
+Fail / File: docs/ARCHITECTURE.md
+BM: Terangkan aliran HTTP, Spring Security, JWT dan lapisan penyimpanan.
+EN: Explain HTTP, Spring Security, JWT and persistence boundaries.
+-->
+
 # Architecture
 
 Client -> AuthController -> AuthService -> UserRepository -> H2

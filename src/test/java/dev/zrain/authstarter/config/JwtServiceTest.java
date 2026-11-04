@@ -1,3 +1,11 @@
+/*
+ * Fail / File: src/test/java/dev/zrain/authstarter/config/JwtServiceTest.java
+ * Pembangun / Developer: Zrain
+ * Tarikh dicipta / Created: 2026-10-26 (Git initial commit fe0ad6dd39)
+ * Tarikh dikemas kini / Last updated: 2026-11-04
+ * BM: Ujian regresi untuk perkhidmatan autentikasi dan kontrak keselamatan.
+ * EN: Regression tests for authentication services and security contracts.
+ */
 
 package dev.zrain.authstarter.config;
 

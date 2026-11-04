@@ -1,3 +1,12 @@
+<!--
+Pembangun / Developer: Zrain
+Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
+Dikemas kini / Last updated: 2026-11-04
+Fail / File: docs/SECURITY.md
+BM: Terangkan model ancaman, sempadan keselamatan dan had penggunaan demo.
+EN: Explain threat model, security boundaries and demo limitations.
+-->
+
 # Security and limitations
 
 - JWT signature: HS256 with >= 32 random bytes; validate issuer, audience and expiry.

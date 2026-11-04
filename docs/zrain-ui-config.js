@@ -1,6 +1,6 @@
 /**
  * Pembangun / Developer: Zrain
- * Dicipta / Created: Unknown (rekod asal belum disahkan)
+ * Dicipta / Created: 2026-10-27 (bukti: sejarah Git zrain-auth-starter)
  * Dikemas kini / Last updated: 2026-11-04
  * Fail / File: docs/zrain-ui-config.js
  * BM: Aktifkan Golden Reference dan ScrollSpy untuk empat seksyen panduan Auth Starter.

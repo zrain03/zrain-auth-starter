@@ -1,4 +1,11 @@
-
+/*
+ * Fail / File: src/test/java/dev/zrain/authstarter/integration/AuthFlowIntegrationTest.java
+ * Pembangun / Developer: Zrain
+ * Tarikh dicipta / Created: 2026-10-26 (Git initial commit fe0ad6dd39)
+ * Tarikh dikemas kini / Last updated: 2026-11-04
+ * BM: Pastikan register, login, akses profil dan penolakan akaun yang dipadam berfungsi melalui API sebenar.
+ * EN: Exercise register, login, profile access and deleted-account rejection through real API endpoints.
+ */
 package dev.zrain.authstarter.integration;
 
 import dev.zrain.authstarter.user.UserRepository;
@@ -29,6 +36,8 @@ class AuthFlowIntegrationTest {
         repository.deleteAll();
     }
 
+    // BM: Lindungi senario registerLoginAndAccessMe daripada regresi sambil mengekalkan kontrak HTTP asal.
+    // EN: Protect the registerLoginAndAccessMe scenario from regressions while retaining the existing HTTP contract.
     @Test
     void registerLoginAndAccessMe() throws Exception {
         mvc.perform(post("/api/v1/auth/register")
@@ -66,6 +75,8 @@ class AuthFlowIntegrationTest {
                 .andExpect(status().isForbidden());
     }
 
+    // BM: Lindungi senario registerDuplicateAndInvalidBody daripada regresi sambil mengekalkan kontrak HTTP asal.
+    // EN: Protect the registerDuplicateAndInvalidBody scenario from regressions while retaining the existing HTTP contract.
     @Test
     void registerDuplicateAndInvalidBody() throws Exception {
         String request = """
@@ -89,6 +100,8 @@ class AuthFlowIntegrationTest {
                 .andExpect(status().isBadRequest());
     }
 
+    // BM: Lindungi senario loginWrongPasswordIsGeneric401 daripada regresi sambil mengekalkan kontrak HTTP asal.
+    // EN: Protect the loginWrongPasswordIsGeneric401 scenario from regressions while retaining the existing HTTP contract.
     @Test
     void loginWrongPasswordIsGeneric401() throws Exception {
         mvc.perform(post("/api/v1/auth/login")
@@ -97,6 +110,8 @@ class AuthFlowIntegrationTest {
                 .andExpect(status().isUnauthorized())
                 .andExpect(jsonPath("$.code").value("INVALID_CREDENTIALS"));
     }
+    // BM: Lindungi senario deletedAccountCannotAccessMeWithOldToken daripada regresi sambil mengekalkan kontrak HTTP asal.
+    // EN: Protect the deletedAccountCannotAccessMeWithOldToken scenario from regressions while retaining the existing HTTP contract.
     @Test
     void deletedAccountCannotAccessMeWithOldToken() throws Exception {
         mvc.perform(post("/api/v1/auth/register")

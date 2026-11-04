@@ -1,3 +1,11 @@
+/*
+ * Fail / File: docs/site.js
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
+ * Dikemas kini / Last updated: 2026-11-04
+ * BM: Mengurus simulasi browser sahaja, termasuk tab, output, reset state dan panduan pengguna, tanpa API autentikasi sebenar.
+ * EN: Manage a browser-only simulation including tabs, results, state resets and user guidance without a real authentication API.
+ */
 "use strict";
 (() => {
   const buttons = [...document.querySelectorAll(".tab-button")];
@@ -52,6 +60,8 @@
   let authenticated = false;
   let lastJson = "";
 
+  // BM: Paparkan kod serta hasil demo tanpa menghantar butiran login kepada pelayan.
+  // EN: Display the demo status and result without submitting login data to a server.
   function setResponse(code, payload, message) {
     lastJson = JSON.stringify(payload, null, 2);
     responseBody.textContent = lastJson;
@@ -68,11 +78,15 @@
     if (advance) nextButton.textContent = "Next: " + ({register:"Sign in",login:"View profile",me:"Try admin access"})[mode] + " →";
   }
 
+  // BM: Segerakkan status sesi tiruan dengan UI yang sedang dipaparkan.
+  // EN: Synchronize the simulated session status with the visible UI.
   function updateSession() {
     sessionDot.classList.toggle("online", authenticated);
     sessionLabel.textContent = authenticated ? "Demo session active · USER role" : demoUser ? "Demo user registered · not signed in" : "No demo session";
   }
 
+  // BM: Tukar operasi demo dan paparkan medan serta langkah yang berkaitan.
+  // EN: Switch demo operation and reveal the relevant fields and steps.
   function setMode(next) {
     mode = next;
     buttons.forEach(button => {
@@ -99,6 +113,8 @@
     setResponse("READY", { endpoint: endpoints[mode].path, instruction: "Run the browser-only simulation." }, "No network requests will be made.");
   }
 
+  // BM: Jalankan simulasi terasing berdasarkan pilihan; token demo bukan JWT sebenar.
+  // EN: Run the isolated simulation for the selected action; demo tokens are not real JWTs.
   function run() {
     const email = emailInput.value.trim().toLowerCase();
     const password = passwordInput.value;

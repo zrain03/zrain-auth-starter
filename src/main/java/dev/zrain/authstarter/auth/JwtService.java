@@ -1,3 +1,11 @@
+/*
+ * Fail / File: src/main/java/dev/zrain/authstarter/auth/JwtService.java
+ * Pembangun / Developer: Zrain
+ * Tarikh dicipta / Created: 2026-10-26 (bukti: Git initial commit fe0ad6dd39)
+ * Tarikh dikemas kini / Last updated: 2026-11-04
+ * BM: Menandatangani token capaian berjangka pendek dengan tuntutan pengguna serta role yang dibenarkan.
+ * EN: Signs short-lived access tokens with user identity and permitted role claims.
+ */
 package dev.zrain.authstarter.auth;
 
 import dev.zrain.authstarter.auth.dto.TokenResponse;
@@ -14,15 +22,21 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @Service
+    /* BM: Menandatangani token capaian berjangka pendek dengan tuntutan pengguna serta role yang dibenarkan.
+       EN: Signs short-lived access tokens with user identity and permitted role claims. */
 public class JwtService {
     private final JwtEncoder encoder;
     private final JwtProperties properties;
 
+    /* BM: Simpan encoder JWT dan tetapan tempoh sah sebagai dependency yang wajib.
+       EN: Retain the JWT encoder and lifetime configuration as required dependencies. */
     public JwtService(JwtEncoder encoder, JwtProperties properties) {
         this.encoder = encoder;
         this.properties = properties;
     }
 
+    /* BM: Gabungkan subject UUID, issuer, audience, issued-at, expiry dan role dalam token HS256 yang ditandatangani.
+       EN: Combine UUID subject, issuer, audience, issued-at, expiry and role in a signed HS256 token. */
     public TokenResponse generateAccessToken(AppUser user) {
         Instant now = Instant.now();
         JwtClaimsSet claims = JwtClaimsSet.builder()

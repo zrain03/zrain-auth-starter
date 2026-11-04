@@ -1,3 +1,9 @@
+# Fail / File: .github/workflows/zrain-ui.yml
+# Pembangun / Developer: Zrain
+# Dicipta / Created: 2026-10-27 (bukti: sejarah Git zrain-auth-starter)
+# Dikemas kini / Last updated: 2026-11-04
+# BM: Sahkan salinan aset UI sepadan dengan dependency GitHub yang dipinkan.
+# EN: Verify copied UI assets exactly match the pinned GitHub dependency.
 name: Zrain UI dependency checks
 
 on:
