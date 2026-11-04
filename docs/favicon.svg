@@ -1,1 +1,9 @@
+<!--
+Fail / File: docs/favicon.svg
+Pembangun / Developer: Zrain
+Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
+Dikemas kini / Last updated: 2026-11-04
+BM: Aset ikon vektor Zrain asal; tidak mengawal komponen header yang dipinkan.
+EN: Original Zrain vector icon asset; does not control the pinned header component.
+-->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#344e3d"/><text x="32" y="46" text-anchor="middle" font-family="Georgia,serif" font-size="46" font-weight="700" font-style="italic" fill="#faf8eb">Z</text></svg>

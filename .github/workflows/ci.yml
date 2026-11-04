@@ -1,4 +1,9 @@
-
+# Fail / File: .github/workflows/ci.yml
+# Pembangun / Developer: Zrain
+# Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
+# Dikemas kini / Last updated: 2026-11-04
+# BM: Bina dan uji Spring Boot menggunakan Java 21 pada push serta pull request.
+# EN: Build and test Spring Boot with Java 21 on pushes and pull requests.
 name: Java CI
 
 on:

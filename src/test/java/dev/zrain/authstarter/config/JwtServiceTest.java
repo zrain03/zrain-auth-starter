@@ -1,3 +1,11 @@
+/*
+ * Fail / File: src/test/java/dev/zrain/authstarter/config/JwtServiceTest.java
+ * Pembangun / Developer: Zrain
+ * Tarikh dicipta / Created: 2026-10-26 (Git initial commit fe0ad6dd39)
+ * Tarikh dikemas kini / Last updated: 2026-11-04
+ * BM: Ujian regresi untuk perkhidmatan autentikasi dan kontrak keselamatan.
+ * EN: Regression tests for authentication services and security contracts.
+ */
 
 package dev.zrain.authstarter.config;
 
@@ -18,6 +26,8 @@ class JwtServiceTest {
             "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8=", "issuer", "audience", 15);
 
     @Test
+    // BM: Sahkan claims subject, issuer, audience, expiry dan role ikut kontrak JWT.
+    // EN: Verify subject, issuer, audience, expiry and role claims follow the JWT contract.
     void tokenContainsExpectedClaims() {
         var key = config.jwtSigningKey(properties);
         var service = new JwtService(config.jwtEncoder(key), properties);
@@ -37,17 +47,23 @@ class JwtServiceTest {
     }
 
     @Test
+    // BM: Tolak secret yang tidak mencapai kekuatan minimum untuk HS256.
+    // EN: Reject secrets below the minimum strength for HS256.
     void shortSecretMustFail() {
         var bad = new JwtProperties("c2hvcnQ=", "issuer", "audience", 15);
         assertThrows(IllegalStateException.class, () -> config.jwtSigningKey(bad));
     }
     @Test
+    // BM: Gagalkan konfigurasi tanpa secret yang disediakan secara eksplisit.
+    // EN: Fail configuration without an explicitly supplied secret.
     void missingSecretMustFail() {
         var missing = new JwtProperties("", "issuer", "audience", 15);
         assertThrows(IllegalStateException.class, () -> config.jwtSigningKey(missing));
     }
 
     @Test
+    // BM: Tolak issuer, audience dan tempoh sah yang tidak memenuhi polisi.
+    // EN: Reject issuer, audience and lifetime settings that violate policy.
     void invalidJwtSettingsMustFail() {
         var invalid = new JwtProperties(properties.secretBase64(), "issuer", "audience", 0);
         assertThrows(IllegalStateException.class, () -> config.jwtSigningKey(invalid));

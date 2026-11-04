@@ -1,4 +1,11 @@
-
+/*
+ * Fail / File: src/test/java/dev/zrain/authstarter/integration/SecurityIntegrationTest.java
+ * Pembangun / Developer: Zrain
+ * Tarikh dicipta / Created: 2026-10-26 (Git initial commit fe0ad6dd39)
+ * Tarikh dikemas kini / Last updated: 2026-11-04
+ * BM: Pastikan sempadan public, pengguna dan admin serta validasi token dipatuhi.
+ * EN: Verify public, user and admin boundaries and token validation.
+ */
 package dev.zrain.authstarter.integration;
 
 import dev.zrain.authstarter.config.JwtProperties;
@@ -29,6 +36,8 @@ class SecurityIntegrationTest {
     @Autowired JwtEncoder encoder;
     @Autowired JwtProperties properties;
 
+    // BM: Cipta token ujian bertuntutan boleh ubah untuk menguji validasi tanpa memintas security filter sebenar.
+    // EN: Create test tokens with varied claims to exercise validation without bypassing the real security filters.
     private String token(String audience, Instant expiry, String role) {
         JwtClaimsSet claims = JwtClaimsSet.builder()
                 .issuer(properties.issuer())
@@ -44,6 +53,8 @@ class SecurityIntegrationTest {
                 .getTokenValue();
     }
 
+    // BM: Lindungi senario publicWorksAndProtectedRejectsMissingToken daripada regresi sambil mengekalkan kontrak HTTP asal.
+    // EN: Protect the publicWorksAndProtectedRejectsMissingToken scenario from regressions while retaining the existing HTTP contract.
     @Test
     void publicWorksAndProtectedRejectsMissingToken() throws Exception {
         mvc.perform(get("/api/v1/demo/public"))
@@ -53,6 +64,8 @@ class SecurityIntegrationTest {
                 .andExpect(status().isUnauthorized());
     }
 
+    // BM: Lindungi senario rejectWrongAudienceAndExpiredToken daripada regresi sambil mengekalkan kontrak HTTP asal.
+    // EN: Protect the rejectWrongAudienceAndExpiredToken scenario from regressions while retaining the existing HTTP contract.
     @Test
     void rejectWrongAudienceAndExpiredToken() throws Exception {
         String wrongAudience = token(
@@ -70,6 +83,8 @@ class SecurityIntegrationTest {
                 .andExpect(status().isUnauthorized());
     }
 
+    // BM: Lindungi senario adminRoleControlsAccess daripada regresi sambil mengekalkan kontrak HTTP asal.
+    // EN: Protect the adminRoleControlsAccess scenario from regressions while retaining the existing HTTP contract.
     @Test
     void adminRoleControlsAccess() throws Exception {
         String normal = token(
@@ -86,6 +101,8 @@ class SecurityIntegrationTest {
                 .header("Authorization", "Bearer " + admin))
                 .andExpect(status().isOk());
     }
+    // BM: Lindungi senario rejectWrongIssuerEvenWithValidSignature daripada regresi sambil mengekalkan kontrak HTTP asal.
+    // EN: Protect the rejectWrongIssuerEvenWithValidSignature scenario from regressions while retaining the existing HTTP contract.
     @Test
     void rejectWrongIssuerEvenWithValidSignature() throws Exception {
         JwtClaimsSet claims = JwtClaimsSet.builder()
@@ -104,6 +121,8 @@ class SecurityIntegrationTest {
                 .andExpect(status().isUnauthorized());
     }
 
+    // BM: Lindungi senario rejectMalformedBearerToken daripada regresi sambil mengekalkan kontrak HTTP asal.
+    // EN: Protect the rejectMalformedBearerToken scenario from regressions while retaining the existing HTTP contract.
     @Test
     void rejectMalformedBearerToken() throws Exception {
         mvc.perform(get("/api/v1/demo/protected")

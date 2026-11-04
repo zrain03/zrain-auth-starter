@@ -1,3 +1,11 @@
+<#
+Fail / File: update-zrain-ui.ps1
+Pembangun / Developer: Zrain
+Dicipta / Created: 2026-10-27 (bukti: sejarah Git zrain-auth-starter)
+Dikemas kini / Last updated: 2026-11-04
+BM: Jalankan install, sync dan ujian aset UI daripada root repo dengan rollback manual melalui Git.
+EN: Run install, sync and UI asset checks from the repo root, with manual recovery through Git.
+#>
 # Update the Zrain Auth Starter *website* from the official pinned
 # @zrain/ui GitHub dependency. Maven/JWT backend remains independent.
 $ErrorActionPreference = 'Stop'

@@ -1,3 +1,9 @@
+# Fail / File: src/main/resources/application-local.yml
+# Pembangun / Developer: Zrain
+# Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
+# Dikemas kini / Last updated: 2026-11-04
+# BM: Konfigurasi H2 sementara untuk pembangunan sahaja, bukan penyimpanan akaun production.
+# EN: Ephemeral H2 configuration for local development only, not production account storage.
 spring:
   config:
     activate:

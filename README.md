@@ -1,6 +1,6 @@
 <!--
 Pembangun / Developer: Zrain
-Dicipta / Created: Unknown (rekod asal belum disahkan)
+Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
 Dikemas kini / Last updated: 2026-11-04
 Fail / File: README.md
 BM: Penerangan penggunaan dan integrasi versi terkini shared UI Zrain.

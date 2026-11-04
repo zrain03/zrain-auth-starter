@@ -1,3 +1,12 @@
+<!--
+Pembangun / Developer: Zrain
+Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
+Dikemas kini / Last updated: 2026-11-04
+Fail / File: docs/PRD.md
+BM: Rekod skop dan kriteria reka bentuk template autentikasi yang boleh diguna semula.
+EN: Record scope and design criteria for the reusable authentication template.
+-->
+
 # Product Requirements: Zrain Auth Starter
 
 ## Goal

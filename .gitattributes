@@ -1,3 +1,9 @@
+# Fail / File: .gitattributes
+# Pembangun / Developer: Zrain
+# Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
+# Dikemas kini / Last updated: 2026-11-04
+# BM: Tetapkan peraturan Git bagi penghujung baris dan pengendalian fail silang platform.
+# EN: Define Git line-ending and cross-platform file handling rules.
 * text=auto
 
 mvnw text eol=lf

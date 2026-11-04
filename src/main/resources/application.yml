@@ -1,3 +1,9 @@
+# Fail / File: src/main/resources/application.yml
+# Pembangun / Developer: Zrain
+# Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
+# Dikemas kini / Last updated: 2026-11-04
+# BM: Tetapan API asas; rahsia JWT hanya datang daripada environment, dan mesej ralat dalaman disembunyikan.
+# EN: Base API settings; JWT secrets come only from the environment and internal error details stay hidden.
 spring:
   application:
     name: zrain-auth-starter

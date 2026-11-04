@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "product": "Zrain Auth Starter",
+  "maintainer": "Zrain",
+  "timezone": "Asia/Kuala_Lumpur",
+  "policy": "Metadata dates are source-control evidence, never fabricated; do not alter upstream files solely for headers.",
+  "files": [
+    {
+      "path": ".env.example",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": ".gitattributes",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": ".github/workflows/persona.yml",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-11-04",
+      "createdEvidence": "Persona audit authored on 2026-11-04",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": ".github/workflows/zrain-ui.yml",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-27",
+      "createdEvidence": "first in repository: 2026-10-27; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": ".gitignore",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": ".mvn/wrapper/maven-wrapper.properties",
+      "maintainer": "Zrain",
+      "originalAuthor": "Upstream / third party",
+      "created": "2026-10-26",
+      "createdEvidence": "present in initial commit fe0ad6dd39",
+      "lastUpdated": "2026-10-26",
+      "commentPolicy": "upstream-managed",
+      "notes": "Preserve Maven Wrapper upstream code and license."
+    },
+    {
+      "path": "AGENTS.md",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "CLAUDE.md",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "FILE_PROVENANCE.json",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-11-04",
+      "createdEvidence": "Persona audit authored on 2026-11-04",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "strict-json",
+      "notes": "Strict JSON does not accept comments; metadata is external."
+    },
+    {
+      "path": "LICENSE",
+      "maintainer": "Zrain",
+      "originalAuthor": "Upstream / third party",
+      "created": "2026-10-26",
+      "createdEvidence": "introduced f3cc79c; license text remains upstream-owned",
+      "lastUpdated": "2026-10-26",
+      "commentPolicy": "third-party-license",
+      "notes": "Preserve the original license notice."
+    },
+    {
+      "path": "README.md",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/.nojekyll",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "introduced c51b214d; no subsequent changes",
+      "lastUpdated": "2026-10-26",
+      "commentPolicy": "sentinel",
+      "notes": "Must remain empty for GitHub Pages."
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/PERSONA_AUDIT.md",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-11-04",
+      "createdEvidence": "Persona audit authored on 2026-11-04",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/PRD.md",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/RELEASE_STATUS.md",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/TASKS.md",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/brand.css",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "introduced bf86f1c9; latest 07f303b",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "upstream-copy",
+      "notes": "Byte-for-byte copy managed by npm run ui:sync; do not inject local comments."
+    },
+    {
+      "path": "docs/check-zrain-ui.mjs",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-27",
+      "createdEvidence": "first in repository: 2026-10-27; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/favicon.svg",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/feedback-embed.js",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-11-01",
+      "createdEvidence": "first in repository: 2026-11-01; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/feedback.css",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-11-01",
+      "createdEvidence": "first in repository: 2026-11-01; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/index.html",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/site.css",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/site.js",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/zrain-logo.webp",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "introduced 1b2ee57e; no subsequent changes",
+      "lastUpdated": "2026-10-26",
+      "commentPolicy": "binary-asset",
+      "notes": ""
+    },
+    {
+      "path": "docs/zrain-ui-config.js",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-27",
+      "createdEvidence": "first in repository: 2026-10-27; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "docs/zrain-ui.js",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-27",
+      "createdEvidence": "introduced 679ea398; latest 07f303b",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "upstream-copy",
+      "notes": "Byte-for-byte copy managed by npm run ui:sync; do not inject local comments."
+    },
+    {
+      "path": "mvnw",
+      "maintainer": "Zrain",
+      "originalAuthor": "Upstream / third party",
+      "created": "2026-10-26",
+      "createdEvidence": "present in initial commit fe0ad6dd39",
+      "lastUpdated": "2026-10-26",
+      "commentPolicy": "upstream-managed",
+      "notes": "Preserve Maven Wrapper upstream code and license."
+    },
+    {
+      "path": "mvnw.cmd",
+      "maintainer": "Zrain",
+      "originalAuthor": "Upstream / third party",
+      "created": "2026-10-26",
+      "createdEvidence": "present in initial commit fe0ad6dd39",
+      "lastUpdated": "2026-10-26",
+      "commentPolicy": "upstream-managed",
+      "notes": "Preserve Maven Wrapper upstream code and license."
+    },
+    {
+      "path": "package-lock.json",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-27",
+      "createdEvidence": "introduced with optional UI npm workflow; latest 07f303b",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "strict-json",
+      "notes": "Strict JSON does not accept comments; metadata is external."
+    },
+    {
+      "path": "package.json",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-27",
+      "createdEvidence": "introduced 88425880; latest 07f303b",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "strict-json",
+      "notes": "Strict JSON does not accept comments; metadata is external."
+    },
+    {
+      "path": "pom.xml",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "scripts/check-persona.mjs",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-11-04",
+      "createdEvidence": "Persona audit authored on 2026-11-04",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "scripts/sync-zrain-ui.mjs",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-27",
+      "createdEvidence": "first in repository: 2026-10-27; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/AuthStarterApplication.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/auth/AuthController.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/auth/AuthService.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/auth/EmailAlreadyRegisteredException.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/auth/JwtService.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/auth/dto/LoginRequest.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/auth/dto/RegisterRequest.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/auth/dto/TokenResponse.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/common/ApiError.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/common/ApiExceptionHandler.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/config/JwtConfig.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/config/JwtProperties.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/config/SecurityConfig.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/demo/DemoController.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/user/AppUser.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/user/Role.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/user/UserController.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/user/UserRepository.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/java/dev/zrain/authstarter/user/dto/UserResponse.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/resources/application-local.yml",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/main/resources/application.yml",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/test/java/dev/zrain/authstarter/auth/AuthServiceTest.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/test/java/dev/zrain/authstarter/config/JwtServiceTest.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/test/java/dev/zrain/authstarter/integration/AuthFlowIntegrationTest.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/test/java/dev/zrain/authstarter/integration/SecurityIntegrationTest.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/test/java/dev/zrain/authstarter/user/UserRepositoryTest.java",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "src/test/resources/application-test.yml",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-26",
+      "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    },
+    {
+      "path": "update-zrain-ui.ps1",
+      "maintainer": "Zrain",
+      "originalAuthor": "Zrain",
+      "created": "2026-10-27",
+      "createdEvidence": "first in repository: 2026-10-27; verified from Git history",
+      "lastUpdated": "2026-11-04",
+      "commentPolicy": "inline",
+      "notes": ""
+    }
+  ]
+}

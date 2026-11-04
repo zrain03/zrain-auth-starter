@@ -1,3 +1,12 @@
+<!--
+Pembangun / Developer: Zrain
+Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
+Dikemas kini / Last updated: 2026-11-04
+Fail / File: AGENTS.md
+BM: Arahan penyelenggaraan bagi jurutera automasi tanpa mengubah kontrak authentication.
+EN: Maintenance instructions for automated engineers while preserving authentication contracts.
+-->
+
 # Development instructions
 
 - This is an independent reusable Java 21 / Spring Boot 4 authentication template.

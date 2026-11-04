@@ -1,3 +1,12 @@
+<!--
+Pembangun / Developer: Zrain
+Dicipta / Created: 2026-10-26 (bukti: sejarah Git zrain-auth-starter)
+Dikemas kini / Last updated: 2026-11-04
+Fail / File: docs/TASKS.md
+BM: Senaraikan kerja projek dan keputusan penerimaan yang boleh dijejak.
+EN: Track project tasks and reviewable acceptance decisions.
+-->
+
 # Zrain Auth Starter — Verification checklist
 
 - [x] Build project with Java 21 / Spring Boot 4.1.2.

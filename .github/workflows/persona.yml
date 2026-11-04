@@ -1,0 +1,26 @@
+# Fail / File: .github/workflows/persona.yml
+# Pembangun / Developer: Zrain
+# Dicipta / Created: 2026-11-04
+# Dikemas kini / Last updated: 2026-11-04
+# BM: Laksanakan audit source metadata bagi setiap push dan pull request.
+# EN: Run source metadata audits on every push and pull request.
+name: Zrain Persona Audit
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    steps:
+      # BM: Dapatkan source yang sama dengan commit yang diuji.
+      # EN: Check out the exact source revision under test.
+      - uses: actions/checkout@v4
+      # BM: Jalankan pemeriksaan Node tanpa dependency npm tambahan.
+      # EN: Run the Node checks without additional npm dependencies.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/check-persona.mjs

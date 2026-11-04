@@ -1,3 +1,11 @@
+/*
+ * Fail / File: docs/feedback-embed.js
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: 2026-11-01 (bukti: sejarah Git zrain-auth-starter)
+ * Dikemas kini / Last updated: 2026-11-04
+ * BM: Memaparkan maklum balas GitHub awam mengikut produk dengan pautan selamat dan loading apabila diperlukan.
+ * EN: Render product-specific public GitHub feedback with safe links and lazy loading.
+ */
 /* Zrain public community feedback. No account needed to read; no privileged token in the browser. */
 (function () {
   'use strict';
@@ -6,20 +14,28 @@
     'zrain-image-tools':22,'zrain-pdf-tools':23,'zrain-document-tools':24,
     'zrain-developer-tools':25,'zrain-productivity-tools':26};
   const loader = document.currentScript;
+  // BM: Bina DOM dengan textContent supaya kandungan komentar tidak dihuraikan sebagai HTML.
+  // EN: Create DOM nodes using textContent so comment content is not interpreted as HTML.
   function node(tag, cls, value) {
     const e = document.createElement(tag);
     if(cls) e.className = cls;
     if(value !== undefined) e.textContent = value;
     return e;
   }
+  // BM: Benarkan hanya pautan HTTPS ke GitHub atau avatar GitHub untuk mengelak URL tidak selamat.
+  // EN: Allow only HTTPS GitHub or GitHub avatar links to avoid unsafe URLs.
   function safe(url) {
     try { const u = new URL(url); return u.protocol === 'https:' &&
       (u.hostname === 'github.com' || u.hostname === 'avatars.githubusercontent.com') ? u.href : null; }
     catch { return null; }
   }
+  // BM: Buka pautan awam pada tab berasingan tanpa akses opener.
+  // EN: Open public links in a separate tab without opener access.
   function link(label, href, cls) {
     const a = node('a',cls,label); a.href=href; a.target='_blank'; a.rel='noopener noreferrer'; return a;
   }
+  // BM: Pasang widget sekali bagi produk yang dikenal pasti dan jangan menduplikasi kandungan.
+  // EN: Mount the widget once for the identified product without duplicating content.
   function init() {
     const product = loader?.dataset.product || document.body?.dataset.feedbackProduct;
     const id = threads[product];
@@ -53,6 +69,8 @@
     const refresh=node('button','zr-feedback__button secondary','Refresh comments');
     refresh.type='button';buttons.append(refresh);panel.append(head,buttons,status,list,paging,info);root.append(panel);
     let page=1,busy=false;
+    // BM: Paparkan komen sebagai teks biasa serta hadkan panjangnya untuk menjaga UI.
+    // EN: Render comments as plain text and bound their length to protect layout.
     function render(item){
       if(!item||typeof item.body!=='string')return;
       const card=node('article','zr-feedback__comment'),who=node('div','zr-feedback__who');
@@ -70,6 +88,8 @@
       }
       list.append(card);
     }
+    // BM: Ambil komen awam mengikut halaman dan sediakan retry apabila GitHub tidak tersedia.
+    // EN: Fetch public comments page by page and allow retry when GitHub is unavailable.
     async function load(){
       if(busy)return;
       busy=true;paging.replaceChildren();status.textContent='Loading authentic comments…';

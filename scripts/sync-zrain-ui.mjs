@@ -1,3 +1,11 @@
+/*
+ * Fail / File: scripts/sync-zrain-ui.mjs
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: 2026-10-27 (bukti: sejarah Git zrain-auth-starter)
+ * Dikemas kini / Last updated: 2026-11-04
+ * BM: Sahkan atau salin tiga aset yang dipinkan; jangan sunting salinan terjana secara berasingan.
+ * EN: Check or copy three pinned assets; do not independently edit the generated copies.
+ */
 /**
  * Synchronize official Zrain UI assets from the version-pinned GitHub package
  * installed at node_modules/@zrain/ui.
