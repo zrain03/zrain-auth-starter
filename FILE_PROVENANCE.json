@@ -226,32 +226,12 @@
       "notes": ""
     },
     {
-      "path": "docs/feedback-embed.js",
-      "maintainer": "Zrain",
-      "originalAuthor": "Zrain",
-      "created": "2026-11-01",
-      "createdEvidence": "first in repository: 2026-11-01; verified from Git history",
-      "lastUpdated": "2026-11-04",
-      "commentPolicy": "inline",
-      "notes": ""
-    },
-    {
-      "path": "docs/feedback.css",
-      "maintainer": "Zrain",
-      "originalAuthor": "Zrain",
-      "created": "2026-11-01",
-      "createdEvidence": "first in repository: 2026-11-01; verified from Git history",
-      "lastUpdated": "2026-11-04",
-      "commentPolicy": "inline",
-      "notes": ""
-    },
-    {
       "path": "docs/index.html",
       "maintainer": "Zrain",
       "originalAuthor": "Zrain",
       "created": "2026-10-26",
       "createdEvidence": "first in repository: 2026-10-26; verified from Git history",
-      "lastUpdated": "2026-11-05",
+      "lastUpdated": "2026-11-06",
       "commentPolicy": "inline",
       "notes": ""
     },
