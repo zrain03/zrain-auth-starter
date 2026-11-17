@@ -102,3 +102,24 @@ body{font-family:Inter,"Segoe UI",Arial,sans-serif;background:linear-gradient(18
 #playground.playground-section { margin-block-start: 0; padding-block-start: 16px; }
 #playground .playground-grid { align-items: start; }
 #playground :is(.sandbox-panel, .response-panel) { min-width: 0; }
+
+/* Branded, explicit text colours keep the authentication demo readable in both shell themes. */
+.zr-shared-page .sandbox-panel,.zr-shared-page .welcome-section,.zr-shared-page .welcome-item,.zr-shared-page .demo-glossary,.zr-shared-page .feature-card,.zr-shared-page .quickstart-card,.zr-shared-page .auth-intro{color:#351d25}
+.zr-shared-page .sandbox-panel :is(h1,h2,h3,label,strong),.zr-shared-page .welcome-section :is(h1,h2,h3,strong),.zr-shared-page .demo-glossary :is(h1,h2,h3,summary),.zr-shared-page .feature-card h3,.zr-shared-page .auth-intro :is(h1,p){color:#351d25}
+.zr-shared-page .sandbox-panel :is(p,small),.zr-shared-page .welcome-section p,.zr-shared-page .demo-glossary p,.zr-shared-page .feature-card p{color:#604a49}
+.zr-shared-page .demo-fields input{color:#351d25;background:#fffefa;border-color:#ab8a80}
+.zr-shared-page .demo-fields input:focus-visible{outline:3px solid #8b4a55;outline-offset:2px}
+.zr-shared-page .tab-button.active{color:#6b2938;border-color:#6b2938}
+.zr-shared-page .learning-step-number{background:#6b2938;color:#fff6e7}
+
+.zr-shared-page .learning-steps li{opacity:1;background:#fff9ef;border-color:#d7b8a7;color:#351d25}
+.zr-shared-page .learning-steps .step-current{background:#f2ddc6;border-color:#9b655f}
+.zr-shared-page .learning-steps strong{color:#351d25}
+.zr-shared-page .learning-steps small{color:#624d4d;font-size:11px}
+.zr-shared-page .step-guide>span{color:#704c46}
+.zr-compact[data-theme="night"] .section-heading>p,.zr-compact[data-theme="night"] .playground-disclaimer{color:#ead4c3}
+.zr-compact[data-theme="night"] .section-heading .eyebrow{color:#f4cb89}
+
+.zr-shared-page .learning-steps .step-current .learning-step-number,.zr-shared-page .learning-steps .learning-step-number{background:#6b2938;color:#fff6e7}
+.zr-shared-page .demo-caution .demo-indicator{background:#6b2938}
+.zr-shared-page .endpoint-line span{background:#f2ddc6;color:#6b2938}

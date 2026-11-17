@@ -38,7 +38,7 @@ for (const hash of ["features", "architecture", "playground", "quickstart"]) {
 // BM: Cegah cache browser daripada menggunakan versi shared UI lama.
 // EN: Prevent browsers from reusing the stale shared UI references.
 assert.match(html, /brand\.css\?v=a109401/);
-assert.match(html, /zrain-ui-config\.js\?v=a109401/);
+assert.match(html, /zrain-ui-config\.js\?v=identity-20261117/);
 // BM: Pastikan peraturan mobile terhad kepada navigation yang diurus library.
 // EN: Keep the mobile adjustment scoped to library-managed navigation.
 const localStyles = await read("./site.css");

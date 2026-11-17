@@ -19,7 +19,7 @@ mountZrainUI({
   product: "Auth Starter",
   // BM: Rujuk logo Zrain tempatan.
   // EN: Use the local official Zrain logo.
-  logoSrc: "./zrain-logo.webp",
+  logoSrc: "https://zrain.web.app/zrain-mascot.png?v=20261117",
   // BM: Pautan nama produk membawa ke hero paling atas.
   // EN: The product name links to the top hero.
   productHref: "#top",
